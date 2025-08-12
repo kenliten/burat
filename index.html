@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burat Cosméticos - Cuidado Capilar Premium</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -20,24 +23,33 @@
         /* Custom styles para la página */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FFF8F5; /* Un tono rosa pálido muy sutil */
+            background-color: #FFF8F5;
+            /* Un tono rosa pálido muy sutil */
         }
-        h1, h2, h3, .font-serif {
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
             font-family: 'Playfair Display', serif;
         }
+
         .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1599387737255-d57b9118a44b?q=80&w=2070&auto=format&fit=crop');
+            background-image: url('./pexels-thefullonmonet-28994394(2).jpg');
             background-size: cover;
             background-position: center;
         }
+
         .btn-primary {
             @apply bg-stone-800 text-white px-8 py-3 rounded-full hover:bg-stone-700 transition-colors duration-300 ease-in-out text-sm font-medium tracking-wider;
         }
+
         .btn-secondary {
             @apply bg-white text-stone-800 border border-stone-300 px-6 py-2 rounded-full hover:bg-stone-100 transition-colors duration-300 ease-in-out text-sm font-medium;
         }
     </style>
 </head>
+
 <body class="text-stone-700">
 
     <!-- Header y Navbar -->
@@ -49,11 +61,13 @@
                 <a href="#productos" class="hover:text-stone-900 transition-colors">Productos</a>
                 <a href="#nosotros" class="hover:text-stone-900 transition-colors">Sobre Nosotros</a>
                 <a href="#contacto" class="hover:text-stone-900 transition-colors">Contacto</a>
+                <a href="/dashboard.html" class="hover:text-stone-900 transition-colors">Panel de control</a>
             </div>
             <div class="flex items-center">
                 <a href="#" class="relative">
                     <i class="fas fa-shopping-cart text-xl text-stone-600 hover:text-stone-800 transition-colors"></i>
-                    <span class="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                    <span
+                        class="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
                 </a>
                 <button class="md:hidden ml-6 text-stone-800" id="menu-btn">
                     <i class="fas fa-bars text-xl"></i>
@@ -71,10 +85,11 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="inicio" class="hero-bg h-[80vh] flex items-center text-white">
+        <section id="inicio" class="hero-bg h-[100vh] flex items-center text-white">
             <div class="container mx-auto px-6 text-center bg-black/30 backdrop-blur-sm py-16 rounded-lg">
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">El Arte de un Cabello Extraordinario</h1>
-                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Fórmulas exclusivas que nutren, reparan y transforman tu cabello desde la raíz.</p>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Fórmulas exclusivas que nutren, reparan y
+                    transforman tu cabello desde la raíz.</p>
                 <a href="#productos" class="btn-primary">Descubre la Colección</a>
             </div>
         </section>
@@ -83,12 +98,17 @@
         <section id="nosotros" class="py-20 bg-white">
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div class="rounded-lg overflow-hidden shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1556760544-4421763def42?q=80&w=1887&auto=format&fit=crop" alt="Mujer con cabello sano" class="w-full h-full object-cover">
+                    <img src="./pexels-karolina-grabowska-7320791.jpg" alt="Mujer con cabello sano"
+                        class="w-full h-full object-cover">
                 </div>
                 <div>
                     <h2 class="text-3xl md:text-4xl font-serif text-stone-800 mb-6">Nuestra Esencia</h2>
-                    <p class="mb-4 text-stone-600">En Burat Cosméticos, creemos que la belleza verdadera emana de la confianza. Nacimos de la pasión por crear soluciones capilares que no solo embellecen, sino que también sanan y protegen.</p>
-                    <p class="mb-4 text-stone-600">Cada producto es una sinfonía de ingredientes naturales y ciencia avanzada, diseñado para mujeres que no se conforman y buscan lo mejor para su cabello. Somos más que una marca; somos un ritual de amor propio.</p>
+                    <p class="mb-4 text-stone-600">En Burat Cosméticos, creemos que la belleza verdadera emana de la
+                        confianza. Nacimos de la pasión por crear soluciones capilares que no solo embellecen, sino que
+                        también sanan y protegen.</p>
+                    <p class="mb-4 text-stone-600">Cada producto es una sinfonía de ingredientes naturales y ciencia
+                        avanzada, diseñado para mujeres que no se conforman y buscan lo mejor para su cabello. Somos más
+                        que una marca; somos un ritual de amor propio.</p>
                     <p class="font-semibold text-stone-700">Celebra la belleza de ser tú misma, cada día.</p>
                 </div>
             </div>
@@ -98,13 +118,15 @@
         <section id="productos" class="py-20">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-serif text-center text-stone-800 mb-4">Los Más Deseados</h2>
-                <p class="text-center text-stone-600 mb-12 max-w-xl mx-auto">Descubre los favoritos de nuestra comunidad y el secreto detrás de un cabello espectacular.</p>
-                
+                <p class="text-center text-stone-600 mb-12 max-w-xl mx-auto">Descubre los favoritos de nuestra comunidad
+                    y el secreto detrás de un cabello espectacular.</p>
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Product Card 1 -->
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group text-center">
                         <div class="p-4 bg-gray-100">
-                             <img src="http://googleusercontent.com/file_content/0" alt="Shampoo y Mascarilla Cola de Caballo" class="h-64 w-full object-contain transition-transform duration-500 group-hover:scale-105">
+                            <img src="./1.jpg" alt="Shampoo y Mascarilla Cola de Caballo"
+                                class="h-64 w-full object-contain transition-transform duration-500 group-hover:scale-105">
                         </div>
                         <div class="p-6">
                             <h3 class="text-lg font-serif font-semibold text-stone-800">Línea Cola de Caballo</h3>
@@ -116,7 +138,8 @@
                     <!-- Product Card 2 -->
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group text-center">
                         <div class="p-4 bg-gray-100">
-                            <img src="http://googleusercontent.com/file_content/2" alt="Línea Células Madres" class="h-64 w-full object-contain transition-transform duration-500 group-hover:scale-105">
+                            <img src="./2.jpg" alt="Línea Células Madres"
+                                class="h-64 w-full object-contain transition-transform duration-500 group-hover:scale-105">
                         </div>
                         <div class="p-6">
                             <h3 class="text-lg font-serif font-semibold text-stone-800">Línea Células Madres</h3>
@@ -127,8 +150,9 @@
                     </div>
                     <!-- Product Card 3 -->
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group text-center">
-                         <div class="p-4 bg-gray-100">
-                            <img src="http://googleusercontent.com/file_content/4" alt="Línea Prevención Caída" class="h-64 w-full object-contain transition-transform duration-500 group-hover:scale-105">
+                        <div class="p-4 bg-gray-100">
+                            <img src="./4.jpg" alt="Línea Prevención Caída"
+                                class="h-64 w-full object-contain transition-transform duration-500 group-hover:scale-105">
                         </div>
                         <div class="p-6">
                             <h3 class="text-lg font-serif font-semibold text-stone-800">Línea Prevención Caída</h3>
@@ -140,7 +164,8 @@
                     <!-- Product Card 4 -->
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group text-center">
                         <div class="p-4 bg-gray-100">
-                            <img src="http://googleusercontent.com/file_content/1" alt="Línea Reestructurante" class="h-64 w-full object-contain transition-transform duration-500 group-hover:scale-105">
+                            <img src="./3.jpg" alt="Línea Reestructurante"
+                                class="h-64 w-full object-contain transition-transform duration-500 group-hover:scale-105">
                         </div>
                         <div class="p-6">
                             <h3 class="text-lg font-serif font-semibold text-stone-800">Línea Reestructurante</h3>
@@ -156,30 +181,37 @@
         <!-- Testimonials Section -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-serif text-center text-stone-800 mb-12">Lo que dicen de nosotras</h2>
+                <h2 class="text-3xl md:text-4xl font-serif text-center text-stone-800 mb-12">Lo que dicen de nosotras
+                </h2>
                 <div class="grid md:grid-cols-3 gap-8 text-center">
                     <!-- Testimonial 1 -->
                     <div class="bg-stone-50 p-8 rounded-lg">
                         <div class="text-yellow-400 mb-4">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="text-stone-600 mb-4 italic">"¡Increíble! Mi cabello nunca se había sentido tan suave y brillante. La mascarilla de Células Madres es magia pura."</p>
+                        <p class="text-stone-600 mb-4 italic">"¡Increíble! Mi cabello nunca se había sentido tan suave y
+                            brillante. La mascarilla de Células Madres es magia pura."</p>
                         <p class="font-semibold text-stone-800">- Sofía L.</p>
                     </div>
                     <!-- Testimonial 2 -->
                     <div class="bg-stone-50 p-8 rounded-lg">
                         <div class="text-yellow-400 mb-4">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="text-stone-600 mb-4 italic">"Estaba perdiendo mucho cabello y la línea de Prevención Caída ha hecho una diferencia notable en solo un mes. ¡Totalmente recomendada!"</p>
+                        <p class="text-stone-600 mb-4 italic">"Estaba perdiendo mucho cabello y la línea de Prevención
+                            Caída ha hecho una diferencia notable en solo un mes. ¡Totalmente recomendada!"</p>
                         <p class="font-semibold text-stone-800">- Valentina R.</p>
                     </div>
                     <!-- Testimonial 3 -->
                     <div class="bg-stone-50 p-8 rounded-lg">
                         <div class="text-yellow-400 mb-4">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="text-stone-600 mb-4 italic">"El shampoo de Cola de Caballo mantiene mi tinte vibrante por mucho más tiempo. Además, el olor es delicioso. ¡Me encanta!"</p>
+                        <p class="text-stone-600 mb-4 italic">"El shampoo de Cola de Caballo mantiene mi tinte vibrante
+                            por mucho más tiempo. Además, el olor es delicioso. ¡Me encanta!"</p>
                         <p class="font-semibold text-stone-800">- Camila G.</p>
                     </div>
                 </div>
@@ -191,27 +223,36 @@
             <div class="container mx-auto px-6">
                 <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 lg:flex items-center gap-12">
                     <div class="lg:w-1/2 mb-8 lg:mb-0">
-                         <h2 class="text-3xl md:text-4xl font-serif text-stone-800 mb-4">Hablemos</h2>
-                         <p class="text-stone-600 mb-6">¿Tienes preguntas o quieres ser distribuidora? Estamos aquí para ayudarte. Completa el formulario y te contactaremos pronto.</p>
-                         <div class="space-y-4 text-stone-600">
-                            <p><i class="fas fa-map-marker-alt mr-3 text-stone-800"></i> Av. Winston Churchill, Santo Domingo, RD</p>
+                        <h2 class="text-3xl md:text-4xl font-serif text-stone-800 mb-4">Hablemos</h2>
+                        <p class="text-stone-600 mb-6">¿Tienes preguntas o quieres ser distribuidora? Estamos aquí para
+                            ayudarte. Completa el formulario y te contactaremos pronto.</p>
+                        <div class="space-y-4 text-stone-600">
+                            <p><i class="fas fa-map-marker-alt mr-3 text-stone-800"></i> Av. Winston Churchill, Santo
+                                Domingo, RD</p>
                             <p><i class="fas fa-phone mr-3 text-stone-800"></i> +1 (809) 123-4567</p>
                             <p><i class="fas fa-envelope mr-3 text-stone-800"></i> contacto@buratcosmeticos.com</p>
-                         </div>
+                        </div>
                     </div>
                     <div class="lg:w-1/2">
                         <form action="#" method="POST">
                             <div class="mb-5">
                                 <label for="name" class="block mb-2 text-sm font-medium text-stone-600">Nombre</label>
-                                <input type="text" id="name" name="name" class="w-full p-3 bg-stone-50 border border-stone-200 rounded-lg focus:ring-stone-500 focus:border-stone-500" placeholder="Tu nombre completo" required>
+                                <input type="text" id="name" name="name"
+                                    class="w-full p-3 bg-stone-50 border border-stone-200 rounded-lg focus:ring-stone-500 focus:border-stone-500"
+                                    placeholder="Tu nombre completo" required>
                             </div>
                             <div class="mb-5">
                                 <label for="email" class="block mb-2 text-sm font-medium text-stone-600">Email</label>
-                                <input type="email" id="email" name="email" class="w-full p-3 bg-stone-50 border border-stone-200 rounded-lg focus:ring-stone-500 focus:border-stone-500" placeholder="tu@email.com" required>
+                                <input type="email" id="email" name="email"
+                                    class="w-full p-3 bg-stone-50 border border-stone-200 rounded-lg focus:ring-stone-500 focus:border-stone-500"
+                                    placeholder="tu@email.com" required>
                             </div>
                             <div class="mb-5">
-                                <label for="message" class="block mb-2 text-sm font-medium text-stone-600">Mensaje</label>
-                                <textarea id="message" name="message" rows="4" class="w-full p-3 bg-stone-50 border border-stone-200 rounded-lg focus:ring-stone-500 focus:border-stone-500" placeholder="Escribe tu consulta..."></textarea>
+                                <label for="message"
+                                    class="block mb-2 text-sm font-medium text-stone-600">Mensaje</label>
+                                <textarea id="message" name="message" rows="4"
+                                    class="w-full p-3 bg-stone-50 border border-stone-200 rounded-lg focus:ring-stone-500 focus:border-stone-500"
+                                    placeholder="Escribe tu consulta..."></textarea>
                             </div>
                             <button type="submit" class="btn-primary w-full">Enviar Mensaje</button>
                         </form>
@@ -226,7 +267,8 @@
         <div class="container mx-auto px-6 py-8 text-center">
             <div class="flex justify-center space-x-6 mb-4">
                 <a href="#" class="text-2xl hover:text-stone-300 transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-2xl hover:text-stone-300 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-2xl hover:text-stone-300 transition-colors"><i
+                        class="fab fa-facebook-f"></i></a>
                 <a href="#" class="text-2xl hover:text-stone-300 transition-colors"><i class="fab fa-tiktok"></i></a>
             </div>
             <p class="text-sm text-stone-400">&copy; 2025 Burat Cosméticos. Todos los derechos reservados.</p>
@@ -243,4 +285,5 @@
         });
     </script>
 </body>
+
 </html>

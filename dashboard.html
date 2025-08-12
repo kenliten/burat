@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,34 +11,46 @@
 
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- Chart.js for Graphs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light gray background */
+            background-color: #f8fafc;
+            /* Light gray background */
         }
+
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
+
         .sidebar-link {
             @apply flex items-center p-3 my-1 text-gray-600 rounded-lg hover:bg-gray-200 hover:text-gray-900 transition-colors duration-200;
         }
+
         .sidebar-link.active {
             @apply bg-stone-800 text-white hover:bg-stone-700 hover:text-white;
         }
+
         .card {
             @apply bg-white rounded-xl shadow-md p-6;
         }
+
+        aside nav a {
+            padding: 12px;
+        }
     </style>
 </head>
+
 <body class="flex h-screen">
 
     <!-- Sidebar -->
@@ -46,22 +59,21 @@
             <a href="#" class="text-3xl font-serif font-bold text-stone-800">Burat</a>
             <p class="text-xs text-gray-500">Admin Panel</p>
         </div>
-        <nav class="flex-grow p-4">
+        <nav class="flex-grow flex flex-col p-4">
             <h3 class="px-3 mb-2 text-xs font-semibold tracking-wider text-gray-400 uppercase">Gestión</h3>
             <a href="#" class="sidebar-link active">
                 <i class="fas fa-home fa-fw w-6"></i>
-                <span>Dashboard</span>
+                <span>Panel de Control</span>
             </a>
             <a href="#" class="sidebar-link">
                 <i class="fas fa-shopping-cart fa-fw w-6"></i>
                 <span>Pedidos</span>
-                 <span class="ml-auto bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">3</span>
             </a>
             <a href="#" class="sidebar-link">
                 <i class="fas fa-box-open fa-fw w-6"></i>
                 <span>Productos</span>
             </a>
-             <a href="#" class="sidebar-link">
+            <a href="#" class="sidebar-link">
                 <i class="fas fa-boxes-stacked fa-fw w-6"></i>
                 <span>Inventario</span>
             </a>
@@ -104,7 +116,7 @@
     <div class="flex-1 flex flex-col overflow-hidden">
         <!-- Header -->
         <header class="bg-white shadow-sm p-4 flex justify-between items-center">
-             <button class="text-gray-600 md:hidden" id="menu-toggle">
+            <button class="text-gray-600 md:hidden" id="menu-toggle">
                 <i class="fas fa-bars text-xl"></i>
             </button>
             <div>
@@ -115,7 +127,8 @@
                 <button class="text-gray-500 hover:text-gray-800">
                     <i class="fas fa-bell fa-lg"></i>
                 </button>
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop" alt="Foto de perfil" class="w-10 h-10 rounded-full object-cover">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop"
+                    alt="Foto de perfil" class="w-10 h-10 rounded-full object-cover">
             </div>
         </header>
 
@@ -137,7 +150,7 @@
                     </div>
                     <i class="fas fa-dollar-sign text-4xl text-green-300"></i>
                 </div>
-                 <div class="card flex items-center justify-between hover:bg-gray-50 transition-colors">
+                <div class="card flex items-center justify-between hover:bg-gray-50 transition-colors">
                     <div>
                         <p class="text-gray-500 text-sm">Nuevos Clientes</p>
                         <p class="text-3xl font-bold text-gray-800">12</p>
@@ -165,21 +178,24 @@
                     <h2 class="text-xl font-bold text-gray-800 mb-4">Productos Más Vendidos</h2>
                     <div class="space-y-4">
                         <div class="flex items-center">
-                            <img src="http://googleusercontent.com/file_content/2" class="w-12 h-12 rounded-md object-contain mr-4 bg-gray-100 p-1">
+                            <img src="http://googleusercontent.com/file_content/2"
+                                class="w-12 h-12 rounded-md object-contain mr-4 bg-gray-100 p-1">
                             <div>
                                 <p class="font-semibold text-gray-700">Línea Células Madres</p>
                                 <p class="text-sm text-gray-500">150 unidades vendidas</p>
                             </div>
                         </div>
-                         <div class="flex items-center">
-                            <img src="http://googleusercontent.com/file_content/0" class="w-12 h-12 rounded-md object-contain mr-4 bg-gray-100 p-1">
+                        <div class="flex items-center">
+                            <img src="http://googleusercontent.com/file_content/0"
+                                class="w-12 h-12 rounded-md object-contain mr-4 bg-gray-100 p-1">
                             <div>
                                 <p class="font-semibold text-gray-700">Línea Cola de Caballo</p>
                                 <p class="text-sm text-gray-500">123 unidades vendidas</p>
                             </div>
                         </div>
-                         <div class="flex items-center">
-                            <img src="http://googleusercontent.com/file_content/4" class="w-12 h-12 rounded-md object-contain mr-4 bg-gray-100 p-1">
+                        <div class="flex items-center">
+                            <img src="http://googleusercontent.com/file_content/4"
+                                class="w-12 h-12 rounded-md object-contain mr-4 bg-gray-100 p-1">
                             <div>
                                 <p class="font-semibold text-gray-700">Línea Prevención Caída</p>
                                 <p class="text-sm text-gray-500">98 unidades vendidas</p>
@@ -189,7 +205,7 @@
                 </div>
             </div>
 
-             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 <!-- Stock Alerts -->
                 <div class="card">
                     <h2 class="text-xl font-bold text-gray-800 mb-4">Alertas de Stock</h2>
@@ -214,20 +230,23 @@
                     <h2 class="text-xl font-bold text-gray-800 mb-4">Tareas para Hoy</h2>
                     <ul class="space-y-3">
                         <li class="flex items-center">
-                            <input type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            <input type="checkbox"
+                                class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
                             <label class="ml-3 text-gray-700">Preparar pedido #1138 para envío</label>
                         </li>
                         <li class="flex items-center">
-                            <input type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            <input type="checkbox"
+                                class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
                             <label class="ml-3 text-gray-700">Contactar a la clienta Sofía L.</label>
                         </li>
-                         <li class="flex items-center">
-                            <input type="checkbox" checked class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <li class="flex items-center">
+                            <input type="checkbox" checked
+                                class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
                             <label class="ml-3 text-gray-500 line-through">Hacer inventario de shampoos</label>
                         </li>
                     </ul>
                 </div>
-             </div>
+            </div>
 
             <!-- Last 10 Reviews -->
             <div class="card mt-6">
@@ -246,19 +265,25 @@
                             <tr class="bg-white border-b">
                                 <td class="px-6 py-4 font-medium text-gray-900">Valentina R.</td>
                                 <td class="px-6 py-4">Prevención Caída</td>
-                                <td class="px-6 py-4 text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                                <td class="px-6 py-4 text-yellow-400"><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i></td>
                                 <td class="px-6 py-4">"¡Totalmente recomendada!"</td>
                             </tr>
                             <tr class="bg-gray-50 border-b">
                                 <td class="px-6 py-4 font-medium text-gray-900">Camila G.</td>
                                 <td class="px-6 py-4">Cola de Caballo</td>
-                                <td class="px-6 py-4 text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                                <td class="px-6 py-4 text-yellow-400"><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i></td>
                                 <td class="px-6 py-4">"El olor es delicioso. ¡Me encanta!"</td>
                             </tr>
-                             <tr class="bg-white border-b">
+                            <tr class="bg-white border-b">
                                 <td class="px-6 py-4 font-medium text-gray-900">Ana P.</td>
                                 <td class="px-6 py-4">Células Madres</td>
-                                <td class="px-6 py-4 text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
+                                <td class="px-6 py-4 text-yellow-400"><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="far fa-star"></i></td>
                                 <td class="px-6 py-4">"Muy bueno, aunque el envase es pequeño."</td>
                             </tr>
                         </tbody>
@@ -292,7 +317,7 @@
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
                 scales: {
                     y: {
                         beginAtZero: true
@@ -314,4 +339,5 @@
         });
     </script>
 </body>
+
 </html>
