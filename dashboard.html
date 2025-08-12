@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Burat Cosméticos</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Chart.js for Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .sidebar-link {
+            @apply flex items-center p-3 my-1 text-gray-600 rounded-lg hover:bg-gray-200 hover:text-gray-900 transition-colors duration-200;
+        }
+        .sidebar-link.active {
+            @apply bg-stone-800 text-white hover:bg-stone-700 hover:text-white;
+        }
+        .card {
+            @apply bg-white rounded-xl shadow-md p-6;
+        }
+    </style>
+</head>
+<body class="flex h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-lg flex-shrink-0 flex flex-col" id="sidebar">
+        <div class="p-6 text-center border-b">
+            <a href="#" class="text-3xl font-serif font-bold text-stone-800">Burat</a>
+            <p class="text-xs text-gray-500">Admin Panel</p>
+        </div>
+        <nav class="flex-grow p-4">
+            <h3 class="px-3 mb-2 text-xs font-semibold tracking-wider text-gray-400 uppercase">Gestión</h3>
+            <a href="#" class="sidebar-link active">
+                <i class="fas fa-home fa-fw w-6"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-shopping-cart fa-fw w-6"></i>
+                <span>Pedidos</span>
+                 <span class="ml-auto bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">3</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-box-open fa-fw w-6"></i>
+                <span>Productos</span>
+            </a>
+             <a href="#" class="sidebar-link">
+                <i class="fas fa-boxes-stacked fa-fw w-6"></i>
+                <span>Inventario</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-users fa-fw w-6"></i>
+                <span>Clientes</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-file-invoice-dollar fa-fw w-6"></i>
+                <span>Facturar</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-chart-line fa-fw w-6"></i>
+                <span>Finanzas</span>
+            </a>
+
+            <h3 class="px-3 mt-6 mb-2 text-xs font-semibold tracking-wider text-gray-400 uppercase">Personal</h3>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-calendar-alt fa-fw w-6"></i>
+                <span>Agenda</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-cog fa-fw w-6"></i>
+                <span>Ajustes</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-user-circle fa-fw w-6"></i>
+                <span>Perfil</span>
+            </a>
+        </nav>
+        <div class="p-4 border-t">
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-sign-out-alt fa-fw w-6"></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+        <!-- Header -->
+        <header class="bg-white shadow-sm p-4 flex justify-between items-center">
+             <button class="text-gray-600 md:hidden" id="menu-toggle">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800">Dashboard</h1>
+                <p class="text-sm text-gray-500">Bienvenida de nuevo, ¡aquí está tu resumen de hoy!</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="text-gray-500 hover:text-gray-800">
+                    <i class="fas fa-bell fa-lg"></i>
+                </button>
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop" alt="Foto de perfil" class="w-10 h-10 rounded-full object-cover">
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <!-- Shortcuts -->
+                <div class="card flex items-center justify-between hover:bg-gray-50 transition-colors">
+                    <div>
+                        <p class="text-gray-500 text-sm">Pedidos Pendientes</p>
+                        <p class="text-3xl font-bold text-gray-800">3</p>
+                    </div>
+                    <i class="fas fa-dolly text-4xl text-blue-300"></i>
+                </div>
+                <div class="card flex items-center justify-between hover:bg-gray-50 transition-colors">
+                    <div>
+                        <p class="text-gray-500 text-sm">Ingresos del Mes</p>
+                        <p class="text-3xl font-bold text-gray-800">$1,250</p>
+                    </div>
+                    <i class="fas fa-dollar-sign text-4xl text-green-300"></i>
+                </div>
+                 <div class="card flex items-center justify-between hover:bg-gray-50 transition-colors">
+                    <div>
+                        <p class="text-gray-500 text-sm">Nuevos Clientes</p>
+                        <p class="text-3xl font-bold text-gray-800">12</p>
+                    </div>
+                    <i class="fas fa-user-plus text-4xl text-indigo-300"></i>
+                </div>
+                <div class="card flex items-center justify-between hover:bg-gray-50 transition-colors">
+                    <div>
+                        <p class="text-gray-500 text-sm">Stock Bajo</p>
+                        <p class="text-3xl font-bold text-red-500">5</p>
+                    </div>
+                    <i class="fas fa-exclamation-triangle text-4xl text-red-300"></i>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Sales Chart -->
+                <div class="card lg:col-span-2">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Ventas (Últimos 30 días)</h2>
+                    <canvas id="salesChart"></canvas>
+                </div>
+
+                <!-- Best Sellers -->
+                <div class="card">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Productos Más Vendidos</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <img src="http://googleusercontent.com/file_content/2" class="w-12 h-12 rounded-md object-contain mr-4 bg-gray-100 p-1">
+                            <div>
+                                <p class="font-semibold text-gray-700">Línea Células Madres</p>
+                                <p class="text-sm text-gray-500">150 unidades vendidas</p>
+                            </div>
+                        </div>
+                         <div class="flex items-center">
+                            <img src="http://googleusercontent.com/file_content/0" class="w-12 h-12 rounded-md object-contain mr-4 bg-gray-100 p-1">
+                            <div>
+                                <p class="font-semibold text-gray-700">Línea Cola de Caballo</p>
+                                <p class="text-sm text-gray-500">123 unidades vendidas</p>
+                            </div>
+                        </div>
+                         <div class="flex items-center">
+                            <img src="http://googleusercontent.com/file_content/4" class="w-12 h-12 rounded-md object-contain mr-4 bg-gray-100 p-1">
+                            <div>
+                                <p class="font-semibold text-gray-700">Línea Prevención Caída</p>
+                                <p class="text-sm text-gray-500">98 unidades vendidas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- Stock Alerts -->
+                <div class="card">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Alertas de Stock</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between items-center p-2 rounded-md bg-red-50 text-red-700">
+                            <span>Mascarilla Reestructurante</span>
+                            <span class="font-bold">Solo 5 restantes</span>
+                        </li>
+                        <li class="flex justify-between items-center p-2 rounded-md bg-red-50 text-red-700">
+                            <span>Gotero Crecimiento</span>
+                            <span class="font-bold">Solo 8 restantes</span>
+                        </li>
+                        <li class="flex justify-between items-center p-2 rounded-md bg-yellow-50 text-yellow-700">
+                            <span>Laceador en Spray</span>
+                            <span class="font-bold">12 restantes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Today's Tasks -->
+                <div class="card">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Tareas para Hoy</h2>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <input type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            <label class="ml-3 text-gray-700">Preparar pedido #1138 para envío</label>
+                        </li>
+                        <li class="flex items-center">
+                            <input type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            <label class="ml-3 text-gray-700">Contactar a la clienta Sofía L.</label>
+                        </li>
+                         <li class="flex items-center">
+                            <input type="checkbox" checked class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            <label class="ml-3 text-gray-500 line-through">Hacer inventario de shampoos</label>
+                        </li>
+                    </ul>
+                </div>
+             </div>
+
+            <!-- Last 10 Reviews -->
+            <div class="card mt-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Últimos Reviews de Clientes</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">Cliente</th>
+                                <th scope="col" class="px-6 py-3">Producto</th>
+                                <th scope="col" class="px-6 py-3">Rating</th>
+                                <th scope="col" class="px-6 py-3">Comentario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b">
+                                <td class="px-6 py-4 font-medium text-gray-900">Valentina R.</td>
+                                <td class="px-6 py-4">Prevención Caída</td>
+                                <td class="px-6 py-4 text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                                <td class="px-6 py-4">"¡Totalmente recomendada!"</td>
+                            </tr>
+                            <tr class="bg-gray-50 border-b">
+                                <td class="px-6 py-4 font-medium text-gray-900">Camila G.</td>
+                                <td class="px-6 py-4">Cola de Caballo</td>
+                                <td class="px-6 py-4 text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                                <td class="px-6 py-4">"El olor es delicioso. ¡Me encanta!"</td>
+                            </tr>
+                             <tr class="bg-white border-b">
+                                <td class="px-6 py-4 font-medium text-gray-900">Ana P.</td>
+                                <td class="px-6 py-4">Células Madres</td>
+                                <td class="px-6 py-4 text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
+                                <td class="px-6 py-4">"Muy bueno, aunque el envase es pequeño."</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // Chart.js Sales Chart
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: Array.from({ length: 30 }, (_, i) => {
+                    const d = new Date();
+                    d.setDate(d.getDate() - (29 - i));
+                    return `${d.getDate()}/${d.getMonth() + 1}`;
+                }),
+                datasets: [{
+                    label: 'Ventas ($)',
+                    data: [120, 150, 200, 180, 250, 230, 300, 280, 320, 350, 400, 380, 420, 450, 500, 480, 550, 600, 580, 620, 650, 700, 680, 720, 750, 800, 780, 820, 850, 900],
+                    backgroundColor: 'rgba(110, 7, 7, 0.1)',
+                    borderColor: '#78350f', // stone-800
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Mobile sidebar toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
